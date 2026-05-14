@@ -48,6 +48,8 @@ SUMX(
     Fact_Sales, 
     Fact_Sales[Quantity] * RELATED(Dim_Products[Unit_Price_AED])
 )
+```
+
 # UAE Retail Performance Analysis
 
 ## 📈 Key Insights Discovered
