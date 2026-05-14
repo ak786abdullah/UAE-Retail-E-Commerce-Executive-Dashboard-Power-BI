@@ -58,12 +58,8 @@ SUMX(
 * **Healthy Margins:** The UAE operations maintain a highly efficient **34.05% Gross Profit Margin**, successfully beating the 32.00% corporate target.
 * **Omnichannel Parity:** Standard Retail (113M AED) and E-Commerce Hubs (113M AED) are performing almost identically within the Electronics sector, proving e-commerce is a primary driver, not a secondary channel.
 * **Demographic Spend:** Expat customers drove **~351M AED** in revenue compared to **~57M AED** from UAE Nationals, providing concrete justification for the marketing team to skew ad spend toward the expat demographic.
-* **Average Order Value:** The overall AOV sits at a healthy **2.05K AED**, heavily driven by the Electronics category (5.03K AED AOV).
-
-## 📊 Dashboard Preview
-screenshot/Screenshot 2026-05-13 221218.png
-
----
+* **Average Order Value:** The overall AOV sits at a healthy **2.05K AED**, heavily driven by the Electronics category (5.03K AED AOV)
+* 
 
 ## 📂 Repository Contents
 * **Fact_Sales.csv:** Raw transactional data.
