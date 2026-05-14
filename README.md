@@ -66,5 +66,3 @@ SUMX(
 
 ---
 
-### Project Note
-*Transitioning analytical mathematics into data-driven business solutions.*
