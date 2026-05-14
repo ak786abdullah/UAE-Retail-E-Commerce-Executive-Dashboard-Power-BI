@@ -14,7 +14,9 @@ The primary objective of this project was to cure business blind spots regarding
 ---
 
 ## 📸 Dashboard Preview
-*[Insert a clean screenshot of your final dashboard here. On GitHub, you can just drag and drop an image file into the text editor to create a link]*
+<img width="607" height="341" alt="Screenshot 2026-05-13 221218" src="https://github.com/user-attachments/assets/62ca3654-b428-4f36-9b22-1a9b44c4cb45" />
+<img width="600" height="334" alt="Screenshot 2026-05-13 235021" src="https://github.com/user-attachments/assets/97edff0c-67e4-4cfb-b198-0ac1967a2658" />
+
 
 ---
 
