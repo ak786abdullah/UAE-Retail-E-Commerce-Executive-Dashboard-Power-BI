@@ -59,7 +59,7 @@ SUMX(
 * **Average Order Value:** The overall AOV sits at a healthy **2.05K AED**, heavily driven by the Electronics category (5.03K AED AOV).
 
 ## 📊 Dashboard Preview
-![UAE Retail Dashboard Screenshot](https://via.placeholder.com/800x450.png?text=Insert+Your+Power+BI+Dashboard+Screenshot+Here)
+screenshot/Screenshot 2026-05-13 221218.png
 
 ---
 
