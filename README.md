@@ -4,8 +4,6 @@
 ![Data Modeling](https://img.shields.io/badge/Data_Modeling-Star_Schema-blue?style=for-the-badge)
 ![DAX](https://img.shields.io/badge/DAX-Advanced-brightgreen?style=for-the-badge)
 
-**Interactive Dashboard Link:** [Insert your NovyPro or Power BI Service link here]
-
 ## 📌 Executive Summary
 This project transforms raw, multi-channel retail data into a "Single Source of Truth" executive dashboard. Designed specifically for regional directors operating in the United Arab Emirates, this Power BI solution tracks over 400M+ AED in revenue across physical flagship stores and e-commerce fulfillment hubs in Dubai, Abu Dhabi, and Sharjah. 
 
