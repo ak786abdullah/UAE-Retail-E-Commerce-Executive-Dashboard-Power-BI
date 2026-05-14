@@ -1,0 +1,51 @@
+Product_ID,Category,Brand,Unit_Cost_AED,Unit_Price_AED
+PRD001,Electronics,Samsung,3095.43,4327.28
+PRD002,Fashion,Apple,286.84,475.26
+PRD003,Electronics,IKEA,611.24,817.52
+PRD004,Fashion,Samsung,246.44,390.95
+PRD005,Home & Living,Nike,728.89,1028.67
+PRD006,Electronics,Sony,2943.49,4227.15
+PRD007,Fashion,Nike,385.02,552.36
+PRD008,Electronics,IKEA,838.51,1374.32
+PRD009,Groceries,Samsung,61.08,92.51
+PRD010,Home & Living,Apple,872.86,1424.3
+PRD011,Groceries,Nike,59.32,78.2
+PRD012,Fashion,Zara,394.83,648.36
+PRD013,Electronics,IKEA,1472.91,2289.31
+PRD014,Groceries,Sony,35.91,49.69
+PRD015,Groceries,Apple,52.64,72.04
+PRD016,Fashion,Sony,211.79,298.2
+PRD017,Fashion,LocalFarm,345.0,555.59
+PRD018,Fashion,Samsung,331.77,484.54
+PRD019,Electronics,Nike,3695.98,5643.29
+PRD020,Groceries,Nike,55.88,81.49
+PRD021,Home & Living,Sony,470.83,658.53
+PRD022,Groceries,IKEA,72.85,106.34
+PRD023,Fashion,Sony,228.33,305.13
+PRD024,Electronics,Apple,1034.94,1411.65
+PRD025,Home & Living,Apple,638.67,982.5
+PRD026,Home & Living,Zara,1459.51,2399.89
+PRD027,Electronics,Apple,2885.99,4371.66
+PRD028,Groceries,LocalFarm,17.81,26.25
+PRD029,Home & Living,Samsung,1435.34,2368.8
+PRD030,Groceries,Sony,45.54,61.14
+PRD031,Groceries,Nike,20.7,33.22
+PRD032,Electronics,LocalFarm,2210.12,2972.05
+PRD033,Groceries,Zara,26.76,37.37
+PRD034,Electronics,Apple,3061.68,4979.54
+PRD035,Fashion,Sony,280.91,471.57
+PRD036,Fashion,Zara,234.69,362.04
+PRD037,Fashion,Nike,299.53,437.19
+PRD038,Groceries,HomeCentre,72.97,108.04
+PRD039,Fashion,Nike,72.41,94.74
+PRD040,Fashion,Nike,52.52,83.15
+PRD041,Electronics,Nike,735.9,965.92
+PRD042,Groceries,Apple,45.99,64.91
+PRD043,Home & Living,Nike,854.93,1358.78
+PRD044,Home & Living,Nike,1198.47,1945.12
+PRD045,Fashion,Apple,83.93,123.58
+PRD046,Home & Living,IKEA,753.83,1199.82
+PRD047,Electronics,Samsung,1909.17,2741.04
+PRD048,Electronics,Nike,1170.57,1772.85
+PRD049,Fashion,IKEA,114.22,169.62
+PRD050,Electronics,HomeCentre,3328.08,5465.99
