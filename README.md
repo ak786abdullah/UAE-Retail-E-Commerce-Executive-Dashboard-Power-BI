@@ -166,4 +166,4 @@ UAE-Retail-E-Commerce-Executive-Dashboard-Power-BI/
 
 Built as a portfolio project demonstrating end-to-end Power BI development — from raw CSV files to executive-ready reporting — with a focus on the UAE retail and e-commerce market.
 
-**Connect:** [LinkedIn]([https://www.linkedin.com/in/your-linkedin-profile](https://www.linkedin.com/in/muhammad-abdullah-a7861a3a2/) · [GitHub](https://github.com/ak786abdullah)
+**Connect:** [LinkedIn](https://www.linkedin.com/in/muhammad-abdullah-a7861a3a2/) · [GitHub](https://github.com/ak786abdullah)
