@@ -1,68 +1,169 @@
 # 🇦🇪 UAE Retail & E-Commerce Executive Dashboard | Power BI
 
 ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-![Data Modeling](https://img.shields.io/badge/Data_Modeling-Star_Schema-blue?style=for-the-badge)
 ![DAX](https://img.shields.io/badge/DAX-Advanced-brightgreen?style=for-the-badge)
+![Data Modeling](https://img.shields.io/badge/Data_Modeling-Star_Schema-blue?style=for-the-badge)
+![Domain](https://img.shields.io/badge/Domain-UAE_Retail_%26_E--Commerce-red?style=for-the-badge)
 
-## 📌 Executive Summary
-This project transforms raw, multi-channel retail data into a "Single Source of Truth" executive dashboard. Designed specifically for regional directors operating in the United Arab Emirates, this Power BI solution tracks over 400M+ AED in revenue across physical flagship stores and e-commerce fulfillment hubs in Dubai, Abu Dhabi, and Sharjah. 
-
-The primary objective of this project was to cure business blind spots regarding **profit margins**, **omnichannel cannibalization**, and **demographic purchasing behavior**.
+A production-grade Power BI solution that transforms raw, multi-channel retail data into a **single source of truth** for executive decision-making. The dashboard tracks **400M+ AED in revenue** across physical flagship stores and e-commerce fulfillment hubs spanning Dubai, Abu Dhabi, and Sharjah.
 
 ---
 
 ## 📸 Dashboard Preview
-<img width="607" height="341" alt="Screenshot 2026-05-13 221218" src="https://github.com/user-attachments/assets/62ca3654-b428-4f36-9b22-1a9b44c4cb45" />
-<img width="600" height="334" alt="Screenshot 2026-05-13 235021" src="https://github.com/user-attachments/assets/97edff0c-67e4-4cfb-b198-0ac1967a2658" />
 
+> *Executive Overview Page*
 
----
+![Dashboard Overview](dashboard/screenshot_overview.png)
 
-## 🎯 The Business Problems Solved
-This dashboard was engineered to answer four critical business questions:
-1. **The Profitability Problem:** Are we maintaining our target margins despite high-cost items? (Tracking Revenue vs. COGS).
-2. **The Omnichannel Problem:** Is our e-commerce platform cannibalizing our physical retail stores, or are they growing concurrently?
-3. **The Demographic Problem:** How does purchasing behavior differ between UAE Nationals and Expats, and where should marketing allocate their budget?
-4. **The Loyalty Problem:** Does our customer loyalty program genuinely drive a higher Average Order Value (AOV)?
+> *Demographic & Channel Analysis Page*
+
+![Dashboard Detail](dashboard/screenshot_detail.png)
 
 ---
 
-## ⚙️ Technical Execution & Methodology
+## 🎯 Business Problems Solved
 
-### 1. Data Extraction & Transformation (Power Query)
-* Extracted raw `.csv` files containing transactional data, product catalogs, customer demographics, and store locations.
-* Cleansed data by handling null values, standardizing data types (e.g., Currency for AED, Dates for order history), and ensuring relational integrity.
+This dashboard was engineered to answer four questions that traditional reporting tools were leaving unanswered:
 
-### 2. Data Modeling
-* Engineered a robust **Star Schema** data model consisting of one Fact table (`Fact_Sales`) and three Dimension tables (`Dim_Customers`, `Dim_Products`, `Dim_Locations`).
-* Built a custom **Date/Calendar Table** using DAX to enable precise Time Intelligence reporting and chronological trend analysis.
-* Ensured unidirectional, one-to-many filtering for optimal dashboard performance.
+| # | Business Problem | Metric Tracked |
+|---|-----------------|---------------|
+| 1 | **Profitability** — Are we protecting margins despite high-cost SKUs? | Revenue vs. COGS, Gross Profit % |
+| 2 | **Omnichannel Cannibalization** — Is e-commerce growing the business or stealing from stores? | Revenue by Channel, YoY growth per channel |
+| 3 | **Demographic Spend** — Where should marketing allocate budget: Nationals or Expats? | Revenue segmented by customer nationality |
+| 4 | **Loyalty ROI** — Does the loyalty program actually drive higher spend? | AOV by loyalty tier |
 
-### 3. DAX Calculations
-Developed complex, iterative DAX measures to calculate true business metrics. Key functions utilized include `SUMX`, `RELATED`, `DIVIDE`, and `DISTINCTCOUNT`.
+---
 
-*Example Measure - Gross Revenue:*
+## 📈 Key Findings
+
+| Insight | Result |
+|--------|--------|
+| Gross Profit Margin | **34.05%** — exceeds the 32.00% corporate target |
+| Omnichannel Parity | Standard Retail vs. E-Commerce both at **~113M AED** in Electronics — no cannibalization |
+| Expat vs. National Revenue | **351M AED** (Expats) vs. **57M AED** (Nationals) — clear signal for marketing spend |
+| Overall AOV | **2.05K AED**, led by Electronics at **5.03K AED** per order |
+
+---
+
+## ⚙️ Technical Methodology
+
+### Step 1 — Data Extraction & Transformation (Power Query)
+
+- Ingested four raw `.csv` source files: transactional sales, product catalog, customer demographics, and store locations.
+- Cleansed nulls, standardized date formats and AED currency types, and validated relational integrity before loading to the model.
+
+---
+
+### Step 2 — Data Modeling (Star Schema)
+
+The model follows a clean star schema design, ensuring optimal query performance and unambiguous filter propagation.
+
+```
+                    ┌─────────────────┐
+                    │  Dim_Customers  │
+                    │  (CustomerID)   │
+                    └────────┬────────┘
+                             │
+┌─────────────────┐          │          ┌──────────────────┐
+│  Dim_Products   │          ▼          │  Dim_Locations   │
+│  (ProductID)    ├──── Fact_Sales ────┤  (LocationID)    │
+└─────────────────┘    (Transactions)   └──────────────────┘
+                             │
+                    ┌────────┴────────┐
+                    │   Dim_Date      │
+                    │ (Calendar Table)│
+                    └─────────────────┘
+```
+
+**Modeling decisions:**
+- One-to-many, unidirectional relationships on all joins for predictable cross-filter behavior.
+- Custom DAX-built Calendar Table enables full Time Intelligence (MTD, YTD, MoM comparisons).
+- No circular dependencies — every dimension filters the fact table only.
+
+---
+
+### Step 3 — DAX Measures
+
+All business metrics are computed as explicit DAX measures. No implicit measures were used.
+
+| Measure | Purpose | Key Functions |
+|---------|---------|--------------|
+| `Total Gross Revenue (AED)` | Row-context revenue calculation | `SUMX`, `RELATED` |
+| `Total COGS (AED)` | Cost of goods across all transactions | `SUMX`, `RELATED` |
+| `Gross Profit (AED)` | Revenue minus COGS | Arithmetic on measures |
+| `Gross Profit Margin %` | Margin as percentage of revenue | `DIVIDE` (safe division) |
+| `Average Order Value (AED)` | Revenue per unique transaction | `DIVIDE`, `DISTINCTCOUNT` |
+| `Revenue by Channel` | Segmented by store type | `CALCULATE`, `FILTER` |
+| `Revenue by Nationality` | Segmented by customer segment | `CALCULATE`, `FILTER` |
+
+**Example — Gross Revenue (iterative row-context):**
+
 ```dax
-Total Gross Revenue (AED) = 
+Total Gross Revenue (AED) =
 SUMX(
-    Fact_Sales, 
+    Fact_Sales,
     Fact_Sales[Quantity] * RELATED(Dim_Products[Unit_Price_AED])
 )
 ```
 
-# UAE Retail Performance Analysis
+**Example — Safe Gross Margin:**
 
-## 📈 Key Insights Discovered
-* **Healthy Margins:** The UAE operations maintain a highly efficient **34.05% Gross Profit Margin**, successfully beating the 32.00% corporate target.
-* **Omnichannel Parity:** Standard Retail (113M AED) and E-Commerce Hubs (113M AED) are performing almost identically within the Electronics sector, proving e-commerce is a primary driver, not a secondary channel.
-* **Demographic Spend:** Expat customers drove **~351M AED** in revenue compared to **~57M AED** from UAE Nationals, providing concrete justification for the marketing team to skew ad spend toward the expat demographic.
-* **Average Order Value:** The overall AOV sits at a healthy **2.05K AED**, heavily driven by the Electronics category (5.03K AED AOV)
-* 
-
-## 📂 Repository Contents
-* **Fact_Sales.csv:** Raw transactional data.
-* **Dim_Customers.csv / Dim_Locations.csv / Dim_Products.csv:** Dimension lookup tables.
-* **UAE_Retail_Dashboard.pbix:** The core Power BI project file.
+```dax
+Gross Profit Margin % =
+DIVIDE(
+    [Gross Profit (AED)],
+    [Total Gross Revenue (AED)],
+    0
+)
+```
 
 ---
 
+## 📂 Repository Structure
+
+```
+UAE-Retail-E-Commerce-Executive-Dashboard-Power-BI/
+│
+├── Data/
+│   ├── Fact_Sales.csv           # Core transactional data
+│   ├── Dim_Customers.csv        # Customer demographics & loyalty tier
+│   ├── Dim_Products.csv         # Product catalog with cost & price
+│   └── Dim_Locations.csv        # Store/hub locations by Emirate
+│
+├── dashboard/
+│   ├── UAE_Retail_Dashboard.pbix   # Power BI project file
+│   ├── screenshot_overview.png     # Executive overview page
+│   └── screenshot_detail.png       # Channel & demographic analysis page
+│
+└── README.md
+```
+
+---
+
+## 🛠️ Tools & Skills Used
+
+| Area | Tool / Concept |
+|------|---------------|
+| BI Platform | Microsoft Power BI Desktop |
+| Data Preparation | Power Query (M language) |
+| Data Modeling | Star Schema, Relationship management |
+| Calculations | DAX — `SUMX`, `CALCULATE`, `DIVIDE`, `RELATED`, `DISTINCTCOUNT`, `FILTER` |
+| Time Intelligence | Custom Calendar Table, MTD / YTD measures |
+| Domain Knowledge | UAE retail market, Expat/National segmentation, omnichannel dynamics |
+
+---
+
+## 🚀 How to Open This Project
+
+1. Download and install [Power BI Desktop](https://powerbi.microsoft.com/desktop/) (free).
+2. Clone or download this repository.
+3. Open `dashboard/UAE_Retail_Dashboard.pbix` in Power BI Desktop.
+4. If prompted, re-point the data source to the `/Data` folder on your local machine via **Transform Data → Data Source Settings**.
+
+---
+
+## About
+
+Built as a portfolio project demonstrating end-to-end Power BI development — from raw CSV files to executive-ready reporting — with a focus on the UAE retail and e-commerce market.
+
+**Connect:** [LinkedIn]([https://www.linkedin.com/in/your-linkedin-profile](https://www.linkedin.com/in/muhammad-abdullah-a7861a3a2/) · [GitHub](https://github.com/ak786abdullah)
