@@ -13,11 +13,13 @@ A production-grade Power BI solution that transforms raw, multi-channel retail d
 
 > *Executive Overview Page*
 
-![Dashboard Overview](dashboard/screenshot_overview.png)
+<img width="643" height="371" alt="Screenshot 2026-08-09 220244" src="https://github.com/user-attachments/assets/c34cb7da-bb13-4661-8b8d-024625da2c41" />
+
 
 > *Demographic & Channel Analysis Page*
 
-![Dashboard Detail](dashboard/screenshot_detail.png)
+<img width="620" height="374" alt="Screenshot 2026-08-09 220335" src="https://github.com/user-attachments/assets/8cb8fe8b-34eb-4ee2-bf9d-55de59b0bf1c" />
+
 
 ---
 
