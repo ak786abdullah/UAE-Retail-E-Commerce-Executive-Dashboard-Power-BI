@@ -51,7 +51,7 @@ This dashboard was engineered to answer four questions that traditional reportin
 
 ### Step 1 — Data Extraction & Transformation (Power Query)
 
-- Ingested four raw `.csv` source files: transactional sales, product catalog, customer demographics, and store locations.
+- Ingested four raw `.csv` source files: transactional sales, product catalog, customer demographics, and store locations.(I designed and generated a synthetic 200K-row dataset modeling UAE retail seasonality and channel mix" demonstrates data modeling skill on its own.)
 - Cleansed nulls, standardized date formats and AED currency types, and validated relational integrity before loading to the model.
 
 ---
