@@ -106,20 +106,24 @@ SUMX(
     Fact_Sales,
     Fact_Sales[Quantity] * RELATED(Dim_Products[Unit_Price_AED])
 )
-```
 
-**Example — Safe Gross Margin:**
-
-```dax
 Gross Profit Margin % =
 DIVIDE(
     [Gross Profit (AED)],
     [Total Gross Revenue (AED)],
     0
 )
-```
 
----
+Average_Order_Value = DIVIDE([total_gross_revenue],DISTINCTCOUNT(Fact_Sales[Order_ID]))
+
+total_cost_goods_solds = sumx(Fact_Sales,Fact_Sales[Quantity]*RELATED(Dim_Products[Unit_Cost_AED]))
+
+dim_dates = CALENDAR(MIN(Fact_Sales[Order_Date]),MAX(Fact_Sales[Order_Date]))
+
+gross_profit = [total_gross_revenue]-[total_cost_goods_solds]
+
+profit_margin_% = DIVIDE([gross_profit],[total_gross_revenue],0)
+```
 
 ## 📂 Repository Structure
 
