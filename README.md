@@ -149,7 +149,7 @@ UAE-Retail-E-Commerce-Executive-Dashboard-Power-BI/
 | Area | Tool / Concept |
 |------|---------------|
 | BI Platform | Microsoft Power BI Desktop |
-| Data Preparation | Power Query (M language) |
+| Data Preparation | Power Query  |
 | Data Modeling | Star Schema, Relationship management |
 | Calculations | DAX — `SUMX`, `CALCULATE`, `DIVIDE`, `RELATED`, `DISTINCTCOUNT`, `FILTER` |
 | Time Intelligence | Custom Calendar Table, MTD / YTD measures |
