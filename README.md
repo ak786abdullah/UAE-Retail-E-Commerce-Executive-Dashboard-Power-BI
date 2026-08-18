@@ -98,7 +98,7 @@ All business metrics are computed as explicit DAX measures. No implicit measures
 | `Revenue by Channel` | Segmented by store type | `CALCULATE`, `FILTER` |
 | `Revenue by Nationality` | Segmented by customer segment | `CALCULATE`, `FILTER` |
 
-**Example — Gross Revenue (iterative row-context):**
+**Example **
 
 ```dax
 Total Gross Revenue (AED) =
@@ -138,8 +138,6 @@ UAE-Retail-E-Commerce-Executive-Dashboard-Power-BI/
 │
 ├── dashboard/
 │   ├── UAE_Retail_Dashboard.pbix   # Power BI project file
-│   ├── screenshot_overview.png     # Executive overview page
-│   └── screenshot_detail.png       # Channel & demographic analysis page
 │
 └── README.md
 ```
